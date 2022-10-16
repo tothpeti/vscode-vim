@@ -1,0 +1,131 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.list.smoothScrolling": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "telemetry.telemetryLevel": "off",
+    // ---- VIM mappings
+    "vim.leader": "<Space>",
+    "vim.incsearch": true,
+    "vim.showmodename": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Create new vertical split window
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "v"
+            ],
+            "commands": [
+                ":vsp"
+            ]
+        },
+        // Create new horizontal split window
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "h"
+            ],
+            "commands": [
+                ":sp"
+            ]
+        },
+        // Close window/editor
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        // Moving between splitted windows
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "<C-w>",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<C-w>",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<C-w>",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "<C-w>",
+                "l"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "a"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "c"
+            ],
+            "commands": [
+                "editor.action.blockComment"
+            ]
+        }
+    ],
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    }
+}

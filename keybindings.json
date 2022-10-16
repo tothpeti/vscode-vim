@@ -1,0 +1,27 @@
+[
+    {
+        "key": "shift shift",
+        "command": "workbench.action.quickOpen",
+        "when": "inputFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+tab",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "inputFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "tab",
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "inputFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "ctrl+left",
+        "command": "workbench.action.navigateBack",
+        "when": "inputFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "ctlr+right",
+        "command": "workbench.action.navigateForward",
+        "when": "inputFocus && vim.mode == 'Normal'"
+    }
+]
