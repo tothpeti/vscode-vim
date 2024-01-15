@@ -1,27 +1,53 @@
 [
-    {
-        "key": "shift shift",
-        "command": "workbench.action.quickOpen",
-        "when": "inputFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "shift+tab",
-        "command": "workbench.action.nextEditorInGroup",
-        "when": "inputFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "tab",
-        "command": "workbench.action.previousEditorInGroup",
-        "when": "inputFocus && vim.mode == 'Normal'"
-    },
+    // Lazy navigation between panes
     {
         "key": "ctrl+left",
         "command": "workbench.action.navigateBack",
         "when": "inputFocus && vim.mode == 'Normal'"
     },
     {
-        "key": "ctlr+right",
+        "key": "ctrl+right",
         "command": "workbench.action.navigateForward",
         "when": "inputFocus && vim.mode == 'Normal'"
+    },
+    // File Tree
+    {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+e"
+    },
+    {
+        "command": "workbench.files.action.focusFilesExplorer",
+        "key": "ctrl+e",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "renameFile",
+        "key": "r",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "workbench.action.newWindow",
+        "when": "!explorerViewletFocus"
+    },
+    {
+        "command": "deleteFile",
+        "key": "d",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    // Extra
+    {
+        "key": "ctrl+z",
+        "command": "workbench.action.toggleZenMode"
     }
 ]
