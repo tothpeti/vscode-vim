@@ -1,22 +1,49 @@
 {
-    "workbench.colorTheme": "Default Dark+",
     "workbench.list.smoothScrolling": true,
-    "editor.fontFamily": "Fira Code",
+    "workbench.colorTheme": "Default Light Modern",
+    "editor.fontFamily": "Dank Mono",
     "editor.formatOnSave": true,
+    "editor.linkedEditing": true,
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "off",
         "strings": "off"
     },
     "editor.suggestOnTriggerCharacters": true,
+    "explorer.compactFolders": false,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.fontSize": 26,
+    "editor.fontLigatures": true,
+    "zenMode.hideLineNumbers": false,
     "telemetry.telemetryLevel": "off",
-    // ---- VIM mappings
+    // ---- VIM mappings ----
     "vim.leader": "<Space>",
     "vim.incsearch": true,
+    "vim.hlsearch": true,
     "vim.showmodename": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
-        // Create new vertical split window
+        // ---- Buffers ----
+        // Switch b/w buffers
+        {
+            "before": [
+                "<S-Tab>"
+            ],
+            "commands": [
+                ":bprevious"
+            ]
+        },
+        {
+            "before": [
+                "<Tab>"
+            ],
+            "commands": [
+                ":bnext"
+            ]
+        },
+        // ---- Pane management ----
+        // Create new vertical split pane
         {
             "before": [
                 "<leader>",
@@ -24,10 +51,10 @@
                 "v"
             ],
             "commands": [
-                ":vsp"
+                ":vsplit"
             ]
         },
-        // Create new horizontal split window
+        // Create new horizontal split pane
         {
             "before": [
                 "<leader>",
@@ -35,7 +62,7 @@
                 "h"
             ],
             "commands": [
-                ":sp"
+                ":split"
             ]
         },
         // Close window/editor
@@ -49,43 +76,44 @@
                 "workbench.action.closeActiveEditor"
             ]
         },
-        // Moving between splitted windows
+        // Switch to the left pane
         {
             "before": [
                 "<C-h>"
             ],
-            "after": [
-                "<C-w>",
-                "h"
+            "commands": [
+                "workbench.action.focusLeftGroup"
             ]
         },
+        // Switch to the below pane
         {
             "before": [
                 "<C-j>"
             ],
-            "after": [
-                "<C-w>",
-                "j"
+            "commands": [
+                "workbench.action.focusBelowGroup"
             ]
         },
+        // Switch to the above pane
         {
             "before": [
                 "<C-k>"
             ],
-            "after": [
-                "<C-w>",
-                "k"
+            "commands": [
+                "workbench.action.focusAboveGroup"
             ]
         },
+        // Switch to the right pane
         {
             "before": [
                 "<C-l>"
             ],
             "after": [
-                "<C-w>",
-                "l"
+                "workbench.action.focusRightGroup"
             ]
         },
+        // ---- Nice to have ----
+        // Code action
         {
             "before": [
                 "leader",
@@ -95,8 +123,28 @@
                 "editor.action.quickFix"
             ]
         },
+        // Quick search for file names
+        {
+            "before": [
+                "leader",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        // Show detailed preview when hover
+        {
+            "before": [
+                "g",
+                "h"
+            ],
+            "commands": [
+                "editor.action.showDefinitionPreviewHover"
+            ]
+        }
     ],
-    "vim.visualModeKeyBindingsNonRecursive": [
+    "vim.visualModeKeyBindings": [
         {
             "before": [
                 "<"
@@ -122,10 +170,5 @@
                 "editor.action.blockComment"
             ]
         }
-    ],
-    "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
-    }
+    ]
 }
