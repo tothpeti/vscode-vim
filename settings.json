@@ -1,7 +1,7 @@
 {
     "workbench.list.smoothScrolling": true,
-    "workbench.colorTheme": "Default Light Modern",
-    "editor.fontFamily": "Dank Mono",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.fontFamily": "Fira Code",
     "editor.formatOnSave": true,
     "editor.linkedEditing": true,
     "editor.quickSuggestions": {
@@ -11,20 +11,24 @@
     },
     "editor.suggestOnTriggerCharacters": true,
     "explorer.compactFolders": false,
+    "workbench.tree.indent": 20,
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "editor.fontSize": 26,
     "editor.fontLigatures": true,
+    "terminal.integrated.fontSize": 22,
+    "editor.inlayHints.enabled": "on",
+    "editor.inlayHints.fontFamily": "Fira Code",
+    "editor.inlayHints.fontSize": 16,
     "zenMode.hideLineNumbers": false,
     "telemetry.telemetryLevel": "off",
-    // ---- VIM mappings ----
+    // ---- VIM mappings
     "vim.leader": "<Space>",
     "vim.incsearch": true,
     "vim.hlsearch": true,
     "vim.showmodename": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
-        // ---- Buffers ----
         // Switch b/w buffers
         {
             "before": [
@@ -42,8 +46,7 @@
                 ":bnext"
             ]
         },
-        // ---- Pane management ----
-        // Create new vertical split pane
+        // Create new vertical split window
         {
             "before": [
                 "<leader>",
@@ -54,7 +57,7 @@
                 ":vsplit"
             ]
         },
-        // Create new horizontal split pane
+        // Create new horizontal split window
         {
             "before": [
                 "<leader>",
@@ -76,6 +79,7 @@
                 "workbench.action.closeActiveEditor"
             ]
         },
+        // ---------- Panes -----------
         // Switch to the left pane
         {
             "before": [
@@ -112,7 +116,7 @@
                 "workbench.action.focusRightGroup"
             ]
         },
-        // ---- Nice to have ----
+        // ------- Nice to have -----------
         // Code action
         {
             "before": [
@@ -121,6 +125,15 @@
             ],
             "commands": [
                 "editor.action.quickFix"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "r"
+            ],
+            "commands": [
+                "editor.action.rename"
             ]
         },
         // Quick search for file names
@@ -133,7 +146,6 @@
                 "workbench.action.quickOpen"
             ]
         },
-        // Show detailed preview when hover
         {
             "before": [
                 "g",
@@ -170,5 +182,38 @@
                 "editor.action.blockComment"
             ]
         }
-    ]
+    ],
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/.direnv/**": true,
+        "**/.venv/**": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/venv/**": true,
+        "**/.git/**": true,
+        "**/project": true,
+        "**/target": true,
+        "**/.bloop": true,
+        "**/.metals": true
+    },
+    "gopls": {},
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "go.inlayHints.constantValues": true,
+    "go.inlayHints.parameterNames": true,
+    "metals.bloopJvmProperties": [
+        "-Xms4G",
+        "-Xmx8G"
+    ],
+    "metals.serverProperties": [],
+    "metals.testUserInterface": "Test Explorer",
 }
