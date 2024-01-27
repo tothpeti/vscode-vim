@@ -25,7 +25,6 @@
     // ---- VIM mappings
     "vim.leader": "<Space>",
     "vim.incsearch": true,
-    "vim.hlsearch": true,
     "vim.showmodename": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
