@@ -1,7 +1,17 @@
 {
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    // ---- Catppuccin override
+    "catppuccin.italicKeywords": false,
     "workbench.list.smoothScrolling": true,
-    "workbench.colorTheme": "Visual Studio Dark",
-    "editor.fontFamily": "Fira Code",
+    "workbench.tree.indent": 20,
+    "editor.inlayHints.enabled": "on",
+    "editor.inlayHints.fontFamily": "Berkeley Mono",
+    "editor.inlayHints.fontSize": 19,
+    "editor.fontFamily": "Berkeley Mono",
+    "editor.fontSize": 23,
+    "terminal.integrated.fontSize": 21,
+    "terminal.integrated.fontFamily": "BerkeleyMono Nerd Font Mono",
+    "editor.fontLigatures": false,
     "editor.formatOnSave": true,
     "editor.linkedEditing": true,
     "editor.quickSuggestions": {
@@ -10,171 +20,49 @@
         "strings": "off"
     },
     "editor.suggestOnTriggerCharacters": true,
-    "explorer.compactFolders": false,
-    "workbench.tree.indent": 20,
     "editor.minimap.enabled": false,
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
     "breadcrumbs.enabled": false,
-    "editor.fontSize": 26,
-    "editor.fontLigatures": true,
-    "terminal.integrated.fontSize": 22,
-    "editor.inlayHints.enabled": "on",
-    "editor.inlayHints.fontFamily": "Fira Code",
-    "editor.inlayHints.fontSize": 16,
     "zenMode.hideLineNumbers": false,
     "telemetry.telemetryLevel": "off",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "line",
+    "workbench.colorCustomizations": {
+        "editorCursor.background": "#000000",
+    },
+    "editor.bracketPairColorization.enabled": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    // run vscodevim in a separate thread
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
     // ---- VIM mappings
     "vim.leader": "<Space>",
     "vim.incsearch": true,
     "vim.showmodename": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
-        // Switch b/w buffers
         {
             "before": [
-                "<S-Tab>"
+                "<Esc>"
+            ],
+            "when": [
+                "editorFocus"
             ],
             "commands": [
-                ":bprevious"
-            ]
-        },
-        {
-            "before": [
-                "<Tab>"
+                "nohl"
             ],
-            "commands": [
-                ":bnext"
-            ]
+            "silent": true
         },
-        // Create new vertical split window
-        {
-            "before": [
-                "<leader>",
-                "s",
-                "v"
-            ],
-            "commands": [
-                ":vsplit"
-            ]
-        },
-        // Create new horizontal split window
-        {
-            "before": [
-                "<leader>",
-                "s",
-                "h"
-            ],
-            "commands": [
-                ":split"
-            ]
-        },
-        // Close window/editor
-        {
-            "before": [
-                "<leader>",
-                "c",
-                "w"
-            ],
-            "commands": [
-                "workbench.action.closeActiveEditor"
-            ]
-        },
-        // ---------- Panes -----------
-        // Switch to the left pane
-        {
-            "before": [
-                "<C-h>"
-            ],
-            "commands": [
-                "workbench.action.focusLeftGroup"
-            ]
-        },
-        // Switch to the below pane
-        {
-            "before": [
-                "<C-j>"
-            ],
-            "commands": [
-                "workbench.action.focusBelowGroup"
-            ]
-        },
-        // Switch to the above pane
-        {
-            "before": [
-                "<C-k>"
-            ],
-            "commands": [
-                "workbench.action.focusAboveGroup"
-            ]
-        },
-        // Switch to the right pane
-        {
-            "before": [
-                "<C-l>"
-            ],
-            "after": [
-                "workbench.action.focusRightGroup"
-            ]
-        },
-        // ------- Nice to have -----------
-        // Code action
-        {
-            "before": [
-                "leader",
-                "a"
-            ],
-            "commands": [
-                "editor.action.quickFix"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "r"
-            ],
-            "commands": [
-                "editor.action.rename"
-            ]
-        },
-        // Quick search for file names
-        {
-            "before": [
-                "leader",
-                "f"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "h"
-            ],
-            "commands": [
-                "editor.action.showDefinitionPreviewHover"
-            ]
-        }
     ],
-    "vim.visualModeKeyBindings": [
+    "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
-        },
-        {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
-        },
-        {
-            "before": [
-                "leader",
+                "<leader>",
+                "g",
                 "c"
             ],
             "commands": [
@@ -202,17 +90,12 @@
         "**/.bloop": true,
         "**/.metals": true
     },
-    "gopls": {},
-    "go.lintTool": "golangci-lint",
-    "go.lintFlags": [
-        "--fast"
+    "files.associations": {
+        "*.toml": "toml"
+    },
+    "security.allowedUNCHosts": [
+        "wsl$"
     ],
-    "go.inlayHints.constantValues": true,
-    "go.inlayHints.parameterNames": true,
-    "metals.bloopJvmProperties": [
-        "-Xms4G",
-        "-Xmx8G"
-    ],
-    "metals.serverProperties": [],
-    "metals.testUserInterface": "Test Explorer",
+    "security.workspace.trust.untrustedFiles": "open",
+    "http.proxyStrictSSL": false,
 }
