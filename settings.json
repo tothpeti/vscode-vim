@@ -9,6 +9,7 @@
     "editor.inlayHints.fontSize": 19,
     "editor.fontFamily": "Berkeley Mono",
     "editor.fontSize": 23,
+    "editor.lineHeight": 36, // original 31 (or 0) --> equivalent to Intellij's line height: 1.2
     "terminal.integrated.fontSize": 21,
     "terminal.integrated.fontFamily": "BerkeleyMono Nerd Font Mono",
     "editor.fontLigatures": false,
